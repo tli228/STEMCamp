@@ -46,12 +46,19 @@ void setup()
 {
   lcd.begin(16, 2);
   lcd.clear(); 
-  lcd.print("Hello World!"); 
+  lcd.print("  HELLO WORLD!"); 
+  delay(1500);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("    I GAINED ");
+  lcd.setCursor(0, 1);
+  lcd.print("  CONSCIOUSNESS");
+  delay(2000);
+  lcd.clear();
 }
 
 void loop() 
 {
   lcd.setCursor(0, 1); 
-  lcd.print(millis()/1000); 
 }
 

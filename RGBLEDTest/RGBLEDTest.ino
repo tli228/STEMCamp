@@ -18,9 +18,9 @@ void loop()
 {
   setColor(255, 0, 0); // red
   delay(500);
-  setColor(255, 130, 0); // orange
+  setColor(255, 20, 0); // orange
   delay(500);
-  setColor(255, 255, 0); // yellow
+  setColor(255, 130, 0); // yellow
   delay(500);
   setColor(0, 255, 0); // green
   delay(500);

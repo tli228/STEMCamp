@@ -1,10 +1,10 @@
 /*
- * The button I tested wasn't that responsive for some reason. 
- * Also, the ground and power are on opposite sides of the button.
+ * Only one side needs to be breadboarded. The lower lead is for power of 5v and the upper lead is the signal pin for whatever
+ * component it controls. 
  * 
  */
 
-const int buttonPin = 2;
+const int buttonPin = 3;
 int buttonState = 0; 
 
 void setup() 

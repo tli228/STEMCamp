@@ -1,66 +1,41 @@
- /*
-FLEX SENSOR
-  Use the "flex sensor" to change the position of a servo
+/******************************************************************************
+Flex_Sensor_Example.ino
+******************************************************************************/
 
-  In the previous sketch, we learned how to command a servo to
-  mode to different positions. In this sketch, we'll introduce
-  a new sensor, and use it to control the servo.
+const int FLEX_PIN = A0; // Pin connected to voltage divider output
 
-  A flex sensor is a plastic strip with a conductive coating.
-  When the strip is straight, the coating will be a certain
-  resistance. When the strip is bent, the particles in the coating
-  get further apart, increasing the resistance. You can use this
-  sensor to sense finger movement in gloves, door hinges, stuffed
-  animals, etc. See http://www.sparkfun.com/tutorials/270 for
-  more information.
-*/
+// Measure the voltage at 5V and the actual resistance of your
+// 47k resistor, and enter them below:
+const float VCC = 4.98; // Measured voltage of Ardunio 5V line
+const float R_DIV = 47500.0; // Measured resistance of 3.3k resistor
 
-
-// Include the servo library to add servo-control functions:
-
-#include <Servo.h> 
-
-Servo servo1;   //Create a servo "object", called servo1. 
-                //Each servo object controls one servo (you 
-                //can have a maximum of 12). 
-
-const int flexPin = A0; //Define analog input pin to measure
-                        //flex sensor position. 
-
+// Upload the code, then try to adjust these values to more
+// accurately calculate bend degree.
+const float STRAIGHT_RESISTANCE = 37300.0; // resistance when straight
+const float BEND_RESISTANCE = 90000.0; // resistance at 90 deg
 
 void setup() 
-{ 
-
-  Serial.begin(9600); //Set serial baud rate to 9600 bps
-
-  servo1.attach(9); // Enable control of a servo on pin 9
-} 
-
+{
+  Serial.begin(9600);
+  pinMode(FLEX_PIN, INPUT);
+}
 
 void loop() 
-{ 
-  int flexPosition;    // Input value from the analog pin.
-  int servoPosition;   // Output value to the servo.
+{
+  // Read the ADC, and calculate voltage and resistance from it
+  int flexADC = analogRead(FLEX_PIN);
+  float flexV = flexADC * VCC / 1023.0;
+  float flexR = R_DIV * (VCC / flexV - 1.0);
+  Serial.println("Resistance: " + String(flexR) + " ohms");
 
-  // Read the position of the flex sensor (0 to 1023):
+  // Use the calculated resistance to estimate the sensor's
+  // bend angle:
+  float angle = map(flexR, STRAIGHT_RESISTANCE, BEND_RESISTANCE,
+                   0, 90.0);
+  Serial.println("Bend: " + String(angle) + " degrees");
+  Serial.println();
 
-  flexPosition = analogRead(flexPin);
+  delay(500);
+}
 
-
-  servoPosition = map(flexPosition, 600, 900, 0, 180);
-  servoPosition = constrain(servoPosition, 0, 180);
-
-  // Now we'll command the servo to move to that position:
-
-  servo1.write(servoPosition);
-
-
-  Serial.print("sensor: ");
-  Serial.print(flexPosition);
-  Serial.print("  servo: ");
-  Serial.println(servoPosition);
-
-
-  delay(20);  // wait 20ms between servo updates
-} 
 

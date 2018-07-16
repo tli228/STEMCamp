@@ -1,23 +1,14 @@
 /*
-SparkFun Inventor's Kit
-Example sketch 10
 SOFT POTENTIOMETER
-  Use the soft potentiometer to change the color
-  of the RGB LED
-  The soft potentiometer is a neat input device that detects 
-  pressure along its length. When you press it down with a finger
-  (it works best on a flat surface), it will change resistance
-  depending on where you're pressing it. You might use it to make
-  a piano or light dimmer; here we're going to use it to control
-  the color of an RGB LED.
+Doesn't Work fully. Colors are missing
 */
 
-// Constants for LED connections 
+// Constants for LED connections 8
 const int RED_LED_PIN = 9;    // Red LED Pin
 const int GREEN_LED_PIN = 10; // Green LED Pin
 const int BLUE_LED_PIN = 11;  // Blue LED Pin
 
-const int SENSOR_PIN = 0;      // Analog input pin
+const int SENSOR_PIN = A0;      // Analog input pin
 
 // Global PWM brightness values for the RGB LED.
 // These are global so both loop() and setRGB() can see them.

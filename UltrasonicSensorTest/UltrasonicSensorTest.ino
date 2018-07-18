@@ -1,5 +1,5 @@
-const int trigPin = 9; //analog pin 
-const int echoPin = 10; //analog pin 
+const int trigPin = 9; //digital pin 
+const int echoPin = 10; //digital pin 
 const int ledPin = 7; //digital pin 
 
  long duration; 

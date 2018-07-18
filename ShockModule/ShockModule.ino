@@ -1,5 +1,6 @@
 int shockPin = 10; // Use Pin 10 as our Input
 int buzzerPin = 3; 
+int ledPin = 2; 
 
 int shockVal = HIGH; // This is where we record our shock measurement
 boolean bAlarm = false;
@@ -11,7 +12,9 @@ int shockAlarmTime = 250; // Number of milli seconds to keep the shock alarm hig
 void setup ()
 {
   Serial.begin(9600);  
-  pinMode (shockPin, INPUT) ; // input from the KY-002
+  pinMode(shockPin, INPUT) ; // input from the KY-002
+  pinMode(buzzerPin, OUTPUT); 
+  pinMode(ledPin, OUTPUT); 
 }
 void loop ()
 {
@@ -24,6 +27,10 @@ void loop ()
     if (!bAlarm){
       Serial.println("Shock Alarm");
       tone(buzzerPin, 500, 500); 
+      digitalWrite(ledPin, HIGH); 
+      delay(100); 
+      digitalWrite(ledPin, LOW); 
+      delay(100); 
       bAlarm = true;
     }
   }

@@ -1,10 +1,6 @@
 const int trigPin = 9; //analog pin 
 const int echoPin = 10; //analog pin 
 const int ledPin = 7; //digital pin 
-/* 
- *  buzzer is missing cause I couldn't play with it. 
- *  It would be hooked up to a digital pin cause digital pins are just high and low
- */
 
  long duration; 
  int distance; 

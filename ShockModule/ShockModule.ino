@@ -1,5 +1,5 @@
-int shockPin = 10; // Use Pin 10 as our Input
-int buzzerPin = 3; 
+int shockPin = 6; // Use Pin 10 as our Input
+int buzzerPin = 4; 
 int ledPin = 2; 
 
 int shockVal = HIGH; // This is where we record our shock measurement

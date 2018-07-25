@@ -19,7 +19,7 @@ void setup ()
 void loop ()
 {
   shockVal = digitalRead (shockPin) ; // read the value from our sensor
-  
+    
   if (shockVal == LOW) // If we're in an alarm state
   {
     lastShockTime = millis(); // record the time of the shock

@@ -10,7 +10,7 @@ void loop()
 {
   // put your main code here, to run repeatedly:
 
-  tone(buzzerPin, 1000); 
+  tone(buzzerPin, 700, 500); 
   delay(1000); 
   noTone(buzzerPin); 
   delay(1000); 

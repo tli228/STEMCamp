@@ -1,14 +1,3 @@
-/******************************************************************
-  Use the "serial monitor" window to read a temperature sensor.
-  The TMP36 is an easy-to-use temperature sensor that outputs
-  a voltage that's proportional to the ambient temperature.
-  You can use it for all kinds of automation tasks where you'd
-  like to know or control the temperature of something.
-
-  Maybe try to code the LED or buzzer to light or make a sound when 
-  the temperature is too cold or too hot
-******************************************************************/
-
 const int temperaturePin = A0;
 
 void setup()

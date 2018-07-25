@@ -1,5 +1,6 @@
 /*
- * Only one side needs to be breadboarded. The lower lead is for power of 5v and the upper lead is the signal pin for whatever
+ * Only one side needs to be breadboarded. The lower lead is for 
+ * power of 5v and the upper lead is the signal pin for whatever
  * component it controls. 
  * 
  */

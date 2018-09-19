@@ -1,4 +1,4 @@
-int bassPin = 2; 
+int bassPin = 3; 
 
 void setup() 
 {

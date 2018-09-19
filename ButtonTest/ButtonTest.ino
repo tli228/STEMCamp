@@ -1,8 +1,6 @@
 /*
- * Only one side needs to be breadboarded. The lower lead is for 
- * power of 5v and the upper lead is the signal pin for whatever
- * component it controls. 
- * 
+ * Only one side needs to be breadboarded. The upper lead has to have a resistor going to 5v
+ * and then a signal wire going to 3. Then the lower lead is grounded. 
  */
 
 const int buttonPin = 3;

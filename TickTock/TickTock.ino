@@ -19,6 +19,8 @@ int prev = LOW;
 
 int count = 0; 
 
+int timeCount = 1000; 
+
 void setup() 
 {
   pinMode(buttonPin, INPUT_PULLUP); 
@@ -45,7 +47,7 @@ void loop()
   Serial.println(reading); 
   
 if (reading == HIGH && prev == LOW)
-{
+{  
   if (state == HIGH && count == 0)
   {
     count++;

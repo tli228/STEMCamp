@@ -11,7 +11,7 @@ int ledPin10 = 11;
 int ledPin11 = 12; 
 int ledPin12 = 13; 
 
-int pause = 3600000; 
+double pause = 3600000; 
 
 void setup() 
 {
@@ -32,7 +32,7 @@ void setup()
 }
 
 void loop() 
-{
+{ 
     digitalWrite(ledPin1, HIGH); 
     digitalWrite(ledPin2, LOW);
     digitalWrite(ledPin3, LOW); 

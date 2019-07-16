@@ -51,8 +51,9 @@ void loop()
   delay(1000);
 
   //purple 
-  analogWrite(redPin, 255);
-  analogWrite(greenPin, 0); 
-  analogWrite(bluePin, 255); 
+  analogWrite(redPin, 160);
+  analogWrite(greenPin, 32); 
+  analogWrite(bluePin, 240); 
 
+  delay(1000);
 }

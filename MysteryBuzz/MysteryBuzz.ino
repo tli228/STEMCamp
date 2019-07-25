@@ -183,7 +183,7 @@ void setup()
   delay(500); 
   noTone(buzzerPin); 
   delay(500); 
-  tone(buzzerPin, 200, 500);
+  tone(buzzerPin, 700, 500);
   delay(500); 
   noTone(buzzerPin); 
   delay(3000);
